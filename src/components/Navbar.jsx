@@ -39,3 +39,38 @@ function Navbar() {
             </li>
           ))}
         </ul>
+
+        <button
+          type="button"
+          onClick={() => setAberto((valor) => !valor)}
+          aria-expanded={aberto}
+          aria-controls="menu-mobile"
+          aria-label={aberto ? 'Fechar menu' : 'Abrir menu'}
+          className="rounded-md p-2 text-zinc-300 hover:bg-zinc-800 md:hidden"
+        >
+          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2">
+            {aberto ? (
+              <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
+            ) : (
+              <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h16" />
+            )}
+          </svg>
+        </button>
+      </nav>
+
+      {aberto && (
+        <ul id="menu-mobile" className="space-y-1 border-t border-zinc-800 px-4 py-3 md:hidden">
+          {links.map(({ to, label }) => (
+            <li key={to}>
+              <NavLink to={to} end={to === '/'} onClick={fechar} className={mobileClass}>
+                {label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      )}
+    </header>
+  )
+}
+
+export default Navbar
