@@ -57,3 +57,27 @@ function Card({ carro, dias = 1 }) {
             </dd>
           </div>
         </dl>
+
+        <div className="mt-5 flex items-end justify-between border-t border-zinc-800 pt-4">
+          <p className="text-2xl font-extrabold text-brand">
+            {formatarReais(diaria)}
+            <span className="text-sm font-normal text-zinc-400"> / dia</span>
+          </p>
+          <div className="text-right">
+            <p className="text-xs text-zinc-500">
+              {dias} {dias === 1 ? 'dia' : 'dias'}
+              {percentual > 0 && (
+                <span className="ml-1 rounded bg-brand/20 px-1.5 py-0.5 font-semibold text-brand">
+                  -{percentual * 100}%
+                </span>
+              )}
+            </p>
+            <p className="text-lg font-bold">{formatarReais(total)}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  )
+}
+
+export default Card
