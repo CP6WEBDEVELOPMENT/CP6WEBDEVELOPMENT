@@ -33,3 +33,27 @@ function Card({ carro, dias = 1 }) {
           {disponivel ? 'Disponível' : 'Indisponível'}
         </span>
       </div>
+
+      <div className="flex flex-1 flex-col p-5">
+        <p className="text-xs uppercase tracking-wider text-zinc-500">
+          {marca} · {pais}
+        </p>
+        <h3 className="mt-1 text-xl font-bold">{modelo}</h3>
+        <p className="text-sm text-zinc-400">Ano {ano}</p>
+
+        <dl className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
+          <div className="rounded-lg bg-zinc-800/60 p-2">
+            <dt className="text-zinc-500">Potência</dt>
+            <dd className="mt-1 font-semibold">{potencia} cv</dd>
+          </div>
+          <div className="rounded-lg bg-zinc-800/60 p-2">
+            <dt className="text-zinc-500">Lugares</dt>
+            <dd className="mt-1 font-semibold">{lugares}</dd>
+          </div>
+          <div className="rounded-lg bg-zinc-800/60 p-2">
+            <dt className="text-zinc-500">Câmbio</dt>
+            <dd className="mt-1 truncate font-semibold" title={cambio}>
+              {cambio.split(' ')[0]}
+            </dd>
+          </div>
+        </dl>
