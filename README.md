@@ -1,16 +1,56 @@
-# React + Vite
+# AutoPrime Import
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema web de locação de carros importados. Checkpoint 6 de Web Development, Engenharia de Software, FIAP, turma 1ESPF.
 
-Currently, two official plugins are available:
+## Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- Vite 7
+- Tailwind CSS 4
+- React Router DOM 7
 
-## React Compiler
+## Como executar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Estrutura
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+  components/  Navbar, Footer, Card, ScrollToTop
+  pages/       Home, Carros, NaoEncontrada
+  data/        catálogo de veículos
+  utils/       cálculo de locação e formatação de moeda
+  App.jsx      rotas da aplicação
+```
+
+## Rotas
+
+| Rota      | Página         |
+| --------- | -------------- |
+| `/`       | Home           |
+| `/carros` | Carros         |
+| `*`       | NaoEncontrada  |
+
+## Regra de desconto
+
+| Período         | Desconto |
+| --------------- | -------- |
+| 1 a 6 dias      | 0%       |
+| 7 a 14 dias     | 10%      |
+| 15 dias ou mais | 15%      |
+
+## Tarefas
+
+| Branch              | Escopo                                        |
+| ------------------- | --------------------------------------------- |
+| `feature/navbar`    | Componente Navbar com menu responsivo         |
+| `feature/footer`    | Componente Footer                             |
+| `feature/card`      | Catálogo, utilitários e componente Card       |
+| `feature/home`      | Página Home                                   |
+| `feature/carros`    | Página Carros com filtros e simulador         |
+| `feature/rotas`     | Rotas no App.jsx, página 404 e scroll ao topo |
+| `feature/entrega`   | integrante.txt e documentação                 |
