@@ -61,3 +61,45 @@ function Home() {
             Ver todos →
           </Link>
         </div>
+
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {destaques.map((carro) => (
+            <Card key={carro.id} carro={carro} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto mt-24 max-w-6xl px-4" aria-labelledby="titulo-etapas">
+        <h2 id="titulo-etapas" className="text-center text-2xl font-bold sm:text-3xl">
+          Como funciona
+        </h2>
+        <ol className="mt-10 grid gap-6 md:grid-cols-3">
+          {etapas.map(({ numero, titulo, texto }) => (
+            <li key={numero} className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
+              <span className="text-3xl font-extrabold text-brand">{numero}</span>
+              <h3 className="mt-3 text-lg font-semibold">{titulo}</h3>
+              <p className="mt-2 text-sm text-zinc-400">{texto}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="mx-auto mt-24 max-w-6xl px-4">
+        <div className="rounded-3xl border border-brand/30 bg-gradient-to-br from-brand/15 to-transparent px-6 py-14 text-center">
+          <h2 className="text-2xl font-bold sm:text-3xl">Pronto para pegar a estrada?</h2>
+          <p className="mx-auto mt-3 max-w-xl text-zinc-400">
+            Explore a frota, simule o valor da locação e escolha o seu próximo importado.
+          </p>
+          <Link
+            to="/carros"
+            className="mt-8 inline-block rounded-xl bg-brand px-8 py-3 font-semibold text-zinc-950 transition hover:brightness-110"
+          >
+            Escolher meu carro
+          </Link>
+        </div>
+      </section>
+    </>
+  )
+}
+
+export default Home
